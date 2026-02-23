@@ -1,15 +1,19 @@
 class Solution {
     public int maximumCount(int[] nums) {
-        int oddcnt=0;
-        int evencnt=0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]<0){
-                oddcnt++;
-            }
-            else if(nums[i]>0){
-                evencnt++;
-            }
+           int pos = 0;
+           int neg = 0;
+
+           for (int num : nums) {
+               if (num > 0) {
+                  pos++;
+        } 
+             else if (num < 0) {
+                neg++;
         }
-       return Math.max(oddcnt, evencnt);
     }
+
+    return Math.max(pos, neg);
 }
+
+        
+    }
