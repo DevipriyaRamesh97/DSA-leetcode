@@ -1,16 +1,15 @@
 class Solution {
     public int averageValue(int[] nums) {
-        int sum=0, n=0;
+        int sum=0;
+        int count=0;
         for(int i=0;i<nums.length;i++){
-            if(nums[i]%2==0 && nums[i]%3==0){
-                sum+=nums[i];
-                n++;
+            if(nums[i]%6==0){
+                sum = sum+nums[i];
+                count++;
             }
         }
-        if(sum==0){
-            return 0;
-        }
-       int avg= sum/n;
-       return avg;
+        if(count==0) return 0;
+        return sum/count;
+        
     }
 }
